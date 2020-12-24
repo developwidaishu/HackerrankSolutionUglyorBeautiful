@@ -1,0 +1,52 @@
+#!/bin/python3
+
+import sys
+
+def uglyOrBeautiful(a):
+    def isnotSorted(a):
+        b = sorted(a)
+        
+        if a == b :
+            return False
+        else:
+            return True
+    
+    def isUnique(a):
+        x = len(a)
+        s=  set()
+        
+        for i in range(0,x):
+            s.add(a[i])
+            
+        return (len(s) == x)
+    
+    def liesBetween(a):
+        
+        counter = 0
+        
+        for i in range(0,n):
+            if(a[i]>=1 and a[i]<=n):
+                pass
+                
+            else:
+                counter+=1
+        if counter>=1:
+            return False
+        else:
+            return True
+        
+    
+    if(isnotSorted(a) and isUnique(a) and liesBetween(a)):
+        return 'Beautiful'
+    else:
+        return 'Ugly'
+    
+    # Complete this function
+
+if __name__ == "__main__":
+    q = int(input().strip())
+    for a0 in range(q):
+        n = int(input().strip())
+        a = list(map(int, input().strip().split(' ')))
+        result = uglyOrBeautiful(a)
+        print(result)
